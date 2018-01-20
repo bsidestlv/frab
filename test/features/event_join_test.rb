@@ -26,12 +26,12 @@ class EventJoinTest < FeatureTest
     assert_equal @event.speaker_count, 1
 
     visit cfp_events_join_path(token: @event.invite_token, conference_acronym: @conference.acronym)
-    click_on('Join event')
+    click_on('Join an existing submission')
     assert_content page, 'added as speaker'
     assert_equal @event.speakers.count, 2
 
     visit cfp_events_join_path(token: @event.invite_token, conference_acronym: @conference.acronym)
-    click_on('Join event')
+    click_on('Join an existing submission')
     assert_content page, 'already were a speaker'
     assert_equal @event.speakers.count, 2
   end

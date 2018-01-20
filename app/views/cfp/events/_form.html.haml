@@ -22,6 +22,8 @@
     = f.input :submission_note, hint: t("cfp.submission_note_hint")
     = dynamic_association :links, t("cfp.links"), f
     = dynamic_association :event_attachments, t("cfp.uploaded_files"), f
+  By submitting this talk I hereby agree to BSidesTLV 
+  =link_to('code of conduct', 'http://confcodeofconduct.com/') 
   .actions
     = f.button :submit, class: 'primary'
 

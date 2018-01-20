@@ -53,7 +53,7 @@ class SubmitEventTest < FeatureTest
     assert_content page, 'Signed in successfully'
 
     click_on 'Participate'
-    click_on 'Submit a new event', match: :first
+    click_on 'Create a new submission', match: :first
 
     fill_in 'title', with: 'fake-title', match: :first
     select '00:45', from: 'Time slots'

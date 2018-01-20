@@ -185,6 +185,7 @@ en:
   call_for_participation: Call for Participation
   cancel: Cancel
   cfp:
+    code_of_conduct: 'Our conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers'
     abstract_hint: One short paragraph that succinctly describes you. (HTML)
     avatar_hint: Upload a new picture.
     back: Back
@@ -205,7 +206,7 @@ en:
     contact_data: Contact data
     contact_description_html: If anything goes wrong with your submission or if you have any question, please do not hesitate to contact us at %{mail_to}
     contact_headline: Contact
-    create_event_headline: Create a new event
+    create_event_headline: Create a new submission
     current_password_hint: we need your current password to confirm your changes
     deadline_description: Please make sure to submit your proposal until
     description_hint: A longer description of yourself. Use this to give additional details that did not fit in the abstract. (HTML)
@@ -221,10 +222,10 @@ en:
     email_public_hint: If you like, this email address can be published in our public program.
     error_confirming: There was an error confirming your account. Please make sure that you have pasted the full link from the email and that you have not confirmed the account before.
     error_sending_confirmation_instructions: Could not send confirmation instructions. Please make sure you entered the correct email address and that your account is not confirmed already.
-    event_abstract_hint: One short paragraph that succinctly describes the event. (HTML)
+    event_abstract_hint: Your talk abstract. This will be shown on the confrence website(HTML)
     event_confirmed: Event confirmed
     event_created_notice: Event was successfully created.
-    event_description_hint: A longer description of the event. Use this to give additional details that did not fit in the abstract. Both, abstract and description, will be shown on the conference website. (HTML)
+    event_description_hint: Describe the outline of your talk, that main topics that will be discussed and what will be its takeaways. Visible to comitee only. (HTML)     
     event_time_slots_hint: Length of your event in hours and minutes. For regular talks etc. just use the default.
     event_updated_notice: Event was successfully updated.
     event_withdrawn_notice: Your submission has been withdrawn.
@@ -248,14 +249,14 @@ en:
         welcome_text: Enter a welcome message or additional instructions you want to display to participants. (HTML)
     join_alternative: 'Or lookup another invitation token:'
     join_confirm: Do you want to accept the invitation?
-    join_description: 'With the token provided you can join this event as a speaker:'
-    join_event: Join event
+    join_description: 'With the token provided you can join this submission as a speaker:'
+    join_event: Join an existing submission
     join_submitters_hint: Share this token with speakers you want to allow to join this event. After they have created an account, they can use the token in the 'Join event' interface.
     join_success: You have been added as speaker on this event.
     join_token_already_used: You already were a speaker on this event.
     join_token_link: This link directly leads to the 'Join event' page for this event.
     join_token_lookup: Lookup token
-    join_token_lookup_description: Enter the token that allows you to join an event as a speaker.
+    join_token_lookup_description: Enter the token that allows you to join an submission as a speaker.
     join_token_lookup_hint: 'Hint: The token can be viewed by the original submitter in the event''s edit view.'
     join_token_unknown: Token %{token} unknown.
     languages_spoken: Languages spoken
@@ -313,11 +314,11 @@ en:
     sign_up_headline: Sign up for a new account
     signed_up: You have signed up successfully. An email with confirmation instructions has been sent to the address you provided. Please follow these instructions to complete your registration.
     specify_availability: 'Please let us know, at what times you would be available to hold your event:'
-    submission_note_hint: Visible for admins and users, contains additional information.
-    submit_another_event: Submit another event
-    submit_new_event: Submit a new event
+    submission_note_hint: Enter any additional information about your talk. Visible to comitee only.
+    submit_another_event: Create another submission
+    submit_new_event: Create a new submission
     successfully_confirmed: Your account has been successfully confirmed. Thank you for signing up!
-    take_time_to_submit: 'Please take the time to submit your proposal or join an existing event:'
+    take_time_to_submit: 'Please take the time to submit your proposal or join an existing sumission:'
     thanks_for_confirmation: Thank you for confirming your participation.
     thanks_for_interest: Thank you for your interest in participating in %{title}.
     to: to

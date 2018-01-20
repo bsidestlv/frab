@@ -37,6 +37,9 @@
         %h2=t("cfp.contact_headline")
         %p=t("cfp.contact_description_html", mail_to: mail_to(@conference.call_for_participation.contact_email))
 
+      %h2=t("Code of conduct")
+      %p=t("cfp.code_of_conduct")
+      = link_to "More info here", 'http://confcodeofconduct.com/'
   .row
     .span16
       - if @person.events_in(@conference).size > 0
