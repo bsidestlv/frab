@@ -26,6 +26,7 @@
   =link_to('code of conduct', 'http://confcodeofconduct.com/') 
   .actions
     = f.button :submit, class: 'primary'
+    = link_to t('cancel'), :back, class: "btn"
 
 - if @event.present? && @event.invite_token.present?
   %div
