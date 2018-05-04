@@ -65,8 +65,8 @@ class Conference < ApplicationRecord
     joins(:conference_users).where(conference_users: { user_id: user, role: 'orga' })
   }
 
-  scope :past, -> { includes(:days).where(Day.arel_table[:end_date].lt(Time.now)).order('days.start_date DESC').distinct }
-  scope :future, -> { includes(:days).where(Day.arel_table[:end_date].gt(Time.now)).order('days.start_date DESC').distinct }
+  scope :past, -> { where(Conference.arel_table[:end_date].lt(Time.now)).order('start_date DESC') }
+  scope :future, -> { where(Conference.arel_table[:end_date].gt(Time.now)).order('start_date DESC') }
 
   self.per_page = 10
 
@@ -196,11 +196,11 @@ class Conference < ApplicationRecord
     return unless saved_change_to_timeslot_duration? and events.count.positive?
     old_duration = timeslot_duration_before_last_save
     factor = old_duration / timeslot_duration
-    Event.paper_trail.disable
+    PaperTrail.request.disable_model(Event)
     events_including_subs.each do |event|
       event.update_attributes(time_slots: event.time_slots * factor)
     end
-    Event.paper_trail.enable
+    PaperTrail.request.enable_model(Event)
   end
 
   # if a conference has multiple days, they sould not overlap

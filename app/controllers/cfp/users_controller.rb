@@ -8,9 +8,13 @@ class Cfp::UsersController < ApplicationController
 
   def update
     @user = current_user
+    [:password, :password_confirmation].each do |password_key|
+      params[:user].delete(password_key) if params[:user][password_key].blank?
+    end
     if @user.update_attributes(user_params)
       redirect_to cfp_person_path(@user.person), notice: t(:"cfp.updated")
     else
+      flash_model_errors(@user)
       render action: 'edit'
     end
   end
