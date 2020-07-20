@@ -13,10 +13,10 @@ if ENV['CUSTOM_RUBY_VERSION']
   ruby ENV['CUSTOM_RUBY_VERSION'] # i.e.: '2.3'
 end
 
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 5.2.0'
 
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sass-rails', '< 6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
@@ -48,9 +48,9 @@ gem 'rangesliderjs-rails', '~> 2.3'
 gem 'jbuilder'
 
 gem 'activemodel-serializers-xml'
-gem 'activeresource', github: 'rails/activeresource', branch: 'master'
-gem 'acts_as_commentable'
+gem 'activeresource'
 gem 'bcrypt'
+gem 'bootsnap'
 gem 'cocoon'
 gem 'devise'
 gem 'dotenv-rails'
@@ -59,16 +59,21 @@ gem 'haml'
 gem 'http_accept_language'
 gem 'localized_language_select', github: 'frab/localized_language_select', branch: 'master'
 gem 'nokogiri'
+gem 'omniauth-google-oauth2'
+gem 'gitlab_omniauth-ldap'
+gem 'omniauth-rails_csrf_protection'
 gem 'paperclip'
 gem 'paper_trail'
 gem 'prawn', '< 1.0'
 gem 'prawn_rails'
-gem 'pundit', github: 'elabs/pundit', branch: 'master'
+gem 'pundit'
 gem 'ransack'
 gem 'redcarpet'
+gem 'repost', '~> 0.3.0'
 gem 'ri_cal'
 gem 'roust', github: 'frab/roust', branch: 'disallowed-ticket-1-fix'
 gem 'rqrcode'
+gem 'scanf'
 gem 'simple_form'
 gem 'sucker_punch'
 gem 'transitions', require: ['transitions', 'active_record/transitions']
@@ -92,7 +97,6 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 4.0'
-  gem 'shoulda'
   gem 'rails-controller-testing'
   gem 'minitest-rails-capybara'
   gem 'poltergeist'

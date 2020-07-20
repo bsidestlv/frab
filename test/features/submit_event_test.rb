@@ -7,7 +7,7 @@ class SubmitEventTest < FeatureTest
   end
 
   def sign_up_steps
-    click_on 'Sign Up'
+    click_on 'Sign Up', match: :first
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: @user.password
     fill_in 'Password confirmation', with: @user.password
@@ -18,7 +18,7 @@ class SubmitEventTest < FeatureTest
   end
 
   def sign_in_steps
-    click_on 'Log-in'
+    click_on 'Log-in', match: :first
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: @user.password
     click_on 'Log in'
@@ -55,8 +55,8 @@ class SubmitEventTest < FeatureTest
     click_on 'Participate'
     click_on 'Create a new submission', match: :first
 
-    fill_in 'title', with: 'fake-title', match: :first
-    select '00:45', from: 'Time slots'
+    fill_in 'Title', with: 'fake-title', match: :first
+    select '00:45', from: 'Duration'
     click_on 'Create event'
 
     assert_content page, 'Events you already submitted'

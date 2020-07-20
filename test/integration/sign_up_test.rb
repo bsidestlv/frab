@@ -22,6 +22,11 @@ class SignUpTest < ActionDispatch::IntegrationTest
     assert_includes @response.body, 'confirmation link'
     assert_includes @response.body, "#{@conference.title} - Call for Participation"
 
+    mail = ActionMailer::Base.deliveries.last
+    assert_includes mail.to, 'test2@example.org'
+    assert_includes mail.content_type, 'text/plain'
+    assert_includes mail.body.to_s, 'You should confirm your email'
+
     user = User.last
     user.confirm
 
@@ -30,7 +35,9 @@ class SignUpTest < ActionDispatch::IntegrationTest
       'commit' => 'Log in', 'locale' => 'en'
     }
     follow_redirect!
+    follow_redirect!
     assert_includes @response.body, "#{@conference.title} - Call for Participation"
+
     assert_includes @response.body, 'Update profile'
   end
 
@@ -41,6 +48,7 @@ class SignUpTest < ActionDispatch::IntegrationTest
       'user' => { 'email' => user.email, 'password' => user.password },
       'commit' => 'Log in', 'locale' => 'en'
     }
+    follow_redirect!
     follow_redirect!
     assert_includes @response.body, "#{@conference.title} - Call for Participation"
     assert_includes @response.body, 'submit your proposal'
@@ -65,6 +73,7 @@ class SignUpTest < ActionDispatch::IntegrationTest
       'commit' => 'Log in', 'locale' => 'en'
     }
     follow_redirect!
-    assert_includes @response.body, 'Recent changes'
+    follow_redirect!
+    assert_includes @response.body, 'You are logged in as crew member for this conference.'
   end
 end
